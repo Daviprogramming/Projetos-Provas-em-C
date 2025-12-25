@@ -1,0 +1,787 @@
+//Questão 1
+ /*
+ #include "stdio.h"
+ #include "stdlib.h"
+ #include "time.h"
+    void main(){
+        srand(time(NULL));
+        int numero = 20 + rand() % 101;
+        if(numero % 3 == 0 && numero % 5 == 0){
+            printf("o numero %i eh divisivel por 3 e por 5", numero);
+        }
+    }
+*/
+
+//Questão 2
+/*
+#include "stdio.h"
+    void main(){
+        int idade;
+        printf("Digite uma idade: ");
+        scanf("%i", &idade);
+        if(idade <= 10){
+            printf("Voce devera pagar R$30,00");
+        }
+        else if(idade <= 29){
+        printf("Voce devera pagar R$60,00");
+        }
+        else if(idade <= 45){
+        printf("Voce devera pagar R$120,00");
+        }
+        else if(idade <= 59){
+        printf("Voce devera pagar R$150,00");
+        }
+        else if(idade <= 65){
+        printf("Voce devera pagar R$250,00");
+        }
+        else{
+            printf("Voce devera pagar R$400,00");
+        }
+
+    }
+
+*/
+
+//Questão 3
+/*
+#include "stdio.h"
+
+void main(){
+    float lado1, lado2, lado3;
+    printf("Digite os valores dos lados de um triangulos nesse formato -> lado1/lado2/lado3: \n ");
+    scanf("%f/%f/%f", &lado1, &lado2, &lado3);
+    if(lado1 + lado2 > lado3 && lado2 + lado3 > lado1 && lado1 + lado3 > lado2){
+        printf("o seu triangulo existe ");
+        if(lado1 == lado2 && lado3 == lado1){
+            printf("e ele eh equilatero!");
+        }
+        else if(lado2 == lado3 && lado2 != lado1){
+            printf("e ele eh isosceles");
+            
+        }
+        else if(lado1 == lado3 && lado2 != lado1){
+        printf("e ele eh isosceles");
+                }
+        else if(lado1 == lado2 && lado2 != lado3){
+        printf("e ele eh isosceles");
+        }
+        else{
+            printf("e ele eh escaleno");
+        }
+    }
+    else{
+        printf("o seu triangulo nao existe !");
+    }
+}
+*/
+
+//Questão 4
+
+/*
+#include "stdio.h"
+void main(){
+    int codigo, quantidade;
+    float valor = 1;
+    printf("SEJA BEM VINDO AO CARDAPIO !!\n");
+    printf("Especificacao  / Codigo  / Preco\n");
+    printf("Cachorro Quente/  100    / 1.20\n");
+    printf("Bauru Simples  /  101    / 1.30\n");
+    printf("Bauru Com Ovo  /  102    / 1.50\n");
+    printf("Hamburguer     /  103    / 1.20\n");
+    printf("Cheeseburguer  /  104    / 1.30\n");
+    printf("Refrigerante   /  105    / 1.00\n");
+    printf("Digite o codigo do pedido e a quantidade que deseja nesse formato -> codigo/quantidade: \n");
+    scanf("%i/%i", &codigo, &quantidade);
+    switch(codigo){
+        case 100:
+        valor = quantidade * 1.20;
+        printf("Valor total a pagar pelo cachorro quente: %.2f ", valor);
+        break;
+        case 101:
+        valor = quantidade * 1.30;
+        printf("Valor total a pagar pelo Bauru Simples: %.2f ", valor);
+        break;
+        case 102:
+        valor = quantidade * 1.50;
+        printf("Valor total a pagar pelo Bauru com Ovo: %.2f", valor);
+        break;
+        case 103:
+        valor = quantidade * 1.20;
+        printf("Valor total a pagar pelo Hamburguer: %.2f ", valor);
+        break;
+        case 104:
+        valor = quantidade * 1.30;
+        printf("Valor total a pagar pelo Cheeseburguer: %.2f ", valor);
+        break;
+        case 105:
+        valor = quantidade * 1.00;
+        printf("Valor total a pagar pelo Refrigerante: %.2f ", valor);
+        break;
+        default:
+        printf("Digite um codigo valido e tente novamente!");
+        break;
+
+    }
+}
+*/
+
+//Questão 5
+
+/*
+#include "stdio.h"
+void main(){
+int i = 1;
+int total = -1;
+int soma = 0;
+float media;
+while(i != 0){
+    printf("Digite um numero: ");
+    scanf("%i",&i);
+    getchar();
+    if(i % 2 == 0){
+        soma += i;
+        total = total + 1;
+    }
+
+}
+media = soma / total;
+printf("a media dos numeros pares eh: %f", media);
+}
+*/
+
+// Questão 6
+
+/*
+#include "stdio.h"
+
+void main(){
+    int numero;
+    int soma = 0;
+    printf("Digite um numero: ");
+    scanf("%i", &numero);
+    for(int i = 1; i < numero; i++ ){
+        if(numero % i == 0){
+            printf(" + %i", i);
+            soma += i;
+        }
+    }
+    printf(" = %i", soma);
+}
+*/
+
+// Questão 7
+/*
+#include "stdio.h"
+void main(){
+    int ano = 0;
+    float chico = 1.50;
+    float ze = 1.10;
+    while(ze <= chico){
+        if(ze <= chico){
+            chico += 0.1;
+            ze += 0.3;
+            ano += 1;
+        }
+
+    }
+printf("Serao necessarios %i anos para ze ser maior que chico", ano);
+}
+*/
+
+
+
+// Questão 8
+/*
+#include "stdio.h"
+
+void main(){
+    int i = 1;
+    float salario, media_salarial, media_filhos, percentual_habitantes_2_filhos, percentual_salario_1000_reais;
+    float salario_total = 0;
+    int filhos, habitantes;
+    int filhos_total = 0;
+    float salario_menor = 100000;
+    float salario_maior = 0;
+    int mais_de_2_filhos = 0;
+    int salario_1000_reais = 0;
+    printf("Digite a quantidade de habitantes que serao cadastrados: ");
+    scanf("%i", &habitantes);
+    while(habitantes >= i){
+        printf("Digite o salario e o numero de filhos dessa pessoa!");
+        scanf("%f/%i", &salario, &filhos);
+        salario_total += salario;
+        filhos_total += filhos;
+        if(salario < salario_menor){
+            salario_menor = salario;
+        }
+        if(salario > salario_maior){
+            salario_maior = salario;
+        }
+        if(filhos > 2){
+            mais_de_2_filhos++;
+        }
+        if(salario <= 1000){
+            salario_1000_reais++;
+        }
+
+        i++;   
+
+    }
+    percentual_salario_1000_reais = ((float)salario_1000_reais / (float)habitantes) * 100;
+    percentual_habitantes_2_filhos = ((float)mais_de_2_filhos / (float)habitantes) * 100;
+    
+    media_filhos = filhos_total / habitantes;
+    media_salarial = salario_total / habitantes;
+    printf("A media salarial da populacao eh: R$%f \n", media_salarial);
+    printf("A media do numero de filhos eh: %f\n", media_filhos);
+    printf("O maior salario eh: %f\n",salario_maior);
+    printf("O menor salario eh: %f\n", salario_menor);
+    printf("percentual de habitantes com mais de 2 filhos: %.1f%%\n", percentual_habitantes_2_filhos);
+    printf("percentual de pessoas com salario ate R$1000,00 : %.1f%%", percentual_salario_1000_reais);
+
+
+}
+*/
+
+
+//Questão 9
+/*
+#include "stdio.h"
+void main(){
+    float media, media_par;
+    int maior_numero = 0;
+    int menor_numero = 10000;
+    int numero = 1;
+    int soma = 0;
+    int soma_par = 0;
+    int numeros_digitados_par = 0;
+    int numeros_digitados = 0;
+    while(numero != 0){
+        printf("Digite um numero: ");
+        scanf("%i", &numero);
+        if(numero != 0){
+            soma += numero;
+            numeros_digitados++;
+            if(numero > maior_numero){
+                maior_numero += numero;
+            }
+            if(numero < menor_numero){
+            menor_numero = numero;
+            }
+            if(numero % 2 == 0){
+                soma_par += numero;
+                numeros_digitados_par++;
+            }
+        }
+    
+    }
+    media_par = (float)soma_par / numeros_digitados_par;
+    media = (float)soma / numeros_digitados;
+    printf("A soma dos numeros digitados eh: %i\n", soma);
+    printf("A quantidade de numeros digitados eh: %i\n", numeros_digitados);
+    printf("A media dos numeros digitados eh: %f\n", media);
+    printf("O maior numero digitado eh: %i\n", maior_numero);
+    printf("O menor numero digitado eh: %i\n", menor_numero);
+    printf("A media dos numeros pares eh: %f\n", media_par);
+}
+*/
+// Questão 10
+/*
+#include "stdio.h"
+void main(){
+    float porcentagem_votos_nulo, porcentagem_votos_brancos;
+    int jair_rodrigues = 0;
+    int carlos_luz = 0;
+    int neves_rocha = 0;
+    int nulo = 0;
+    int branco = 0;
+    int digito = 0;
+    while(digito != 6){
+        printf("1. Candidato Jair Rodrigues\n");
+        printf("2. Candidato Carlos Luz\n");
+        printf("3. Candidato Neves Rocha\n");
+        printf("4. Nulo\n");
+        printf("5. Branco\n");
+        printf("Entre com o seu voto: ");
+        scanf("%i", &digito);
+        switch(digito){
+        case 1:
+            jair_rodrigues++;
+            break;
+        case 2:
+            carlos_luz++;
+            break;
+        case 3:
+            neves_rocha++;
+            break;
+        case 4:
+            nulo++;
+            break;
+        case 5:
+            branco++;
+            break;
+        case 6:
+            porcentagem_votos_brancos = ((float)branco / ((float)jair_rodrigues + (float)carlos_luz + (float)neves_rocha + (float)nulo + (float)branco)) * 100;
+            porcentagem_votos_nulo = ((float)nulo / ((float)jair_rodrigues + (float)carlos_luz + (float)neves_rocha + (float)branco + (float)nulo)) * 100;
+            printf("O numero de votos de cada candidato eh:\n");
+            printf("Jair Rodrigues : %i votos.\n", jair_rodrigues);
+            printf("Carlos Luz: %i votos.\n", carlos_luz);
+            printf("Neves Rocha: %i votos.\n", neves_rocha);
+            printf("A PORCENTAGEM DE VOTOS NULOS EH: %.2f%%  \n", porcentagem_votos_nulo);
+            printf("A PORCENTAGEM DE VOTOS BRANCOS EH: %.2f%%  \n", porcentagem_votos_brancos);
+            if(jair_rodrigues > carlos_luz && jair_rodrigues > neves_rocha){
+                printf("O candidato vencedor foi: Jair Rodrigues!!");
+            }
+            else if(carlos_luz > jair_rodrigues && carlos_luz > neves_rocha){
+                printf("O candidato vencedor foi: Carlos luz!!");
+            }
+            else if(neves_rocha > jair_rodrigues && neves_rocha > carlos_luz){
+                printf("O candidato vencedor foi: Neves Rocha!!");
+            }
+            else{
+                printf("Tivemos um empate e teremos que realizar a votacao novamente!");
+            }
+            break;
+        default:
+            printf("Digite um numero valido e tente novamente!");
+        }
+
+
+
+    }
+
+    
+}
+*/
+
+//Questão 11
+/*
+#include "stdio.h"
+void main(){
+    for(int i = 1; i <= 6; i++ ){
+        printf("\n");
+        for(int j = 1; j <= 5; j++){
+            if(i > j && i != 1){
+                printf("0");
+            }
+            else{
+                printf("*");
+            }
+
+        
+        }
+    }
+
+}
+*/
+
+//Questão 12
+/*
+#include "stdio.h"
+
+void main(){
+    int i = 1;
+    int fatorial = 1;
+    int numero;
+    printf("Digite um numero inteiro: ");
+    scanf("%i", &numero);
+    while(i <= numero){
+        fatorial *= i;
+        printf("fatorial de %i eh: %i \n", i , fatorial);
+        i++;
+
+    }
+
+}
+*/
+
+//Questão 13
+/*
+#include "stdio.h"
+
+void main(){
+    int codigo, quantidade;
+    float dinheiro_apurado = 0;
+    int mais_itens;
+    int caixa = 1;
+    float feijao = 0;
+    float arroz = 0;
+    float carne = 0;
+    float tomate = 0;
+    float cebola = 0;
+    float total = 0;
+    while(caixa == 1){
+        printf("1.Feijao- R$ 2.0\n");
+        printf("2.Arroz - R$ 1.5\n");
+        printf("3.Carne - R$ 10.0\n");
+        printf("4. Tomate - R$ 3.0\n");
+        printf("5. Cebola -R$ 2.5\n");
+        printf("Digite o codigo e a quantidade do produto -> codigo/quantidade: ");
+        scanf("%i/%i", &codigo, &quantidade);
+        
+        switch(codigo){
+            case 1:
+                feijao += quantidade * 2.0;
+                break;
+            case 2:
+                arroz += quantidade * 1.5;
+                break;
+            case 3:
+                carne += quantidade * 10.5;
+                break;
+            case 4:
+                tomate += quantidade * 3.0;
+                break;
+            case 5:
+                cebola += quantidade * 2.5 ;
+                break;
+            default:
+            printf("Digite um codigo valido e tente novamente!");
+        }
+        printf("Tem mais itens a serem processados ?\n 1 - SIM\n 2 - NAO\n:");
+        scanf("%i", &mais_itens);
+        if(mais_itens == 1){
+            printf("Continuando...\n");
+        }
+        else if(mais_itens == 2){    
+            total = carne + tomate + cebola + feijao + arroz;
+            printf("A compra custou um total de: %f\n", total);
+            printf("Deseja encerrar o caixa ? \n2 - SIM \n1 - NAO\n:");
+            scanf("%i", &caixa);
+            if(caixa == 1){
+                dinheiro_apurado += total;
+                feijao = 0, arroz = 0, carne = 0, cebola = 0, tomate = 0;
+
+            }
+            if(caixa == 2){
+                dinheiro_apurado += total;
+                printf("O total de dinheiro apurado foi de : %f", dinheiro_apurado);
+            }
+
+        }
+        else{
+            printf("Digite um numero valido ou tente novamente!");
+        }
+    }
+
+}
+*/
+
+//Questão 14
+/*
+#include "stdio.h"
+
+void main(){
+    int valores = 20;
+    int n;
+    int multiplicar;
+    for(int i = 1; i <= valores; i++){
+        printf("Digite um numero: ");
+        scanf("%i", &n);    
+        for(int j = 1; j <= n; j++){
+            multiplicar = j * n; 
+            printf("%i x %i = %i\n", j , n , multiplicar);
+
+        }
+
+    }
+}
+*/
+
+//Questão 15
+/*
+#include "stdio.h"
+void main(){
+    int intervalo_1 = 0, intervalo_2 = 0, intervalo_3 = 0, intervalo_4 = 0;
+    int numero = 1;
+    while(numero >= 0 ){
+        printf("Digite um numero: ");
+        scanf("%i", &numero);
+        if(numero >= 0){
+            if(numero >= 0 && numero <= 25){
+                intervalo_1++;
+            }
+            else if(numero <= 50){
+                intervalo_2++;
+            }
+            else if(numero <= 75){
+                intervalo_3++;
+            }
+            else if(numero <= 100){
+                intervalo_4++;
+            }
+        }
+    }
+    printf("Intervalo [0, 25] : %i numeros.\n", intervalo_1);
+    printf("Intervalo [26, 50] : %i numeros.\n", intervalo_2);
+    printf("Intervalo [51, 75] : %i numeros.\n", intervalo_3);
+    printf("Intervalo [76, 100] : %i numeros.\n", intervalo_4);
+
+}
+*/
+//Questão 16
+/*
+#include "math.h"
+#include "stdio.h"
+
+void main(){
+    int numero;
+    int quadrado, cubo;
+    float raiz_quadrada;
+    printf("VALOR LIDO / SEU QUADRADO / SEU CUBO / SUA RAIZ QUADRADA\n");
+    while(1){
+        for(int i = 0; i <= 20; i++){
+            scanf("%i", &numero);
+        quadrado = numero * numero;
+        cubo = numero * numero * numero;
+        raiz_quadrada = sqrt(numero);
+    printf("    %i     /      %i     /     %i     /     %f      ", numero, quadrado, cubo, raiz_quadrada);
+        if(i == 19){
+        printf("\nVALOR LIDO / SEU QUADRADO / SEU CUBO / SUA RAIZ QUADRADA\n");  
+        }
+    
+        }
+    }
+
+}
+*/
+
+//Questão 17
+/**/
+#include "stdio.h"
+void main(){
+    int codigo;
+    float preco;
+    float preco_novo;
+    float media_preco_soma = 0;
+    float media_preco_novo_soma = 0;
+    float media_preco_novo;
+    float media_preco;
+    int total = 0;
+    do{
+        printf("Digite o codigo e o preco do produto nesse formato -> codigo/preco: ");
+        scanf("%i/%f", &codigo, &preco);
+        if(codigo > 0){
+
+        preco_novo = (preco * 20 / 100) + preco;
+        printf("o codigo do produto eh : %i \n", codigo);
+        printf("o preco novo eh : %.2f\n", preco_novo);
+        
+        media_preco_soma += preco;
+        media_preco_novo_soma += preco_novo;
+        total++;
+        }
+
+    }while(codigo >= 0);
+media_preco_novo = media_preco_novo_soma / total;
+media_preco = media_preco_soma / total;
+printf("A media dos precos com aumento eh: R$%f\n", media_preco_novo);
+printf("A media dos precos sem aumento eh: R$%f\n", media_preco);
+
+}
+
+//Questão 18
+/*
+#include "stdio.h"
+void main(){
+    for(int i = 1000; i <= 1999; i++){
+        if(i % 11 == 5){
+            printf("%i\n", i);
+        }
+    }
+
+
+}
+*/
+//Questão 19 - Letra a
+/* Usando While
+#include "stdio.h"
+
+void main(){
+    char ch = 'a';
+    while(ch <= 'j'){
+        printf("%c ", ch);
+        ch++;
+
+
+    }
+}
+
+*/
+// Usando Do while
+/*
+#include "stdio.h"
+
+void main(){
+    char ch = 'a';
+    do{
+
+        printf("%c ",ch);
+        ch++;
+    }while(ch <= 'j');
+}
+*/
+//Questão 19 - letra b
+/* Usando For
+#include "stdio.h"
+
+void main(){
+
+    for(int x = 0, y = 0; x + y < 23;){
+        scanf("%d", &x); 
+        scanf("%d", &y);
+    }
+}
+*/
+// Usando Do While
+/*
+#include "stdio.h"
+void main(){
+    int x = 0;
+    int y = 0;
+    do{
+        scanf("%d", &x);
+        scanf("%d", &y); 
+        
+    }while(x + y < 23);
+}
+
+*/
+
+//Questão 19 - letra c
+
+// Usando for
+/*
+#include "stdio.h"
+void main(){
+    for(int senha = 0; senha != 1234;){
+        scanf("%d", &senha);
+
+    }
+
+}
+*/
+// Usando While
+/*
+#include "stdio.h"
+void main(){
+    int senha = 0;
+    while(senha != 1234){
+        scanf("%d", &senha);
+    }
+
+
+}
+*/
+
+
+//Questão 20
+/*
+#include "stdio.h"
+
+void main(){
+    int numero;
+    printf("Digite um numero: ");
+    scanf("%i", &numero);
+    printf("%i ", numero);
+    while(numero <= 100){
+        printf("%i ", numero * 3);
+        numero = numero * 3;
+
+    }
+
+}
+*/
+/*
+//Questão 21
+ 
+ #include "stdio.h"
+
+
+ void main(){
+    int numero1, numero2;
+    int mmc = 1;
+    printf("Digite um numero: ");
+    scanf("%i", &numero1);
+    getchar();
+    printf("Digite um numero: ");
+    scanf("%i", &numero2);
+    getchar();
+    while(numero1 > 1 || numero2 > 1 ){
+        if(numero1 % 2 == 0 || numero2 % 2 == 0){
+            if(numero1 % 2 == 0){
+                numero1 = numero1 / 2;
+            }
+            if(numero2 % 2 == 0){
+                numero2 = numero2 / 2;
+            }
+            mmc*= 2;
+        }
+        if(numero1 % 3 == 0 || numero2 % 3 == 0){
+            if(numero1 % 3 == 0){
+                numero1 = numero1 / 3;
+            }
+            if(numero2 % 3 == 0){
+                numero2 = numero2 / 3;
+            }
+            mmc*= 3;
+        }
+        if(numero1 % 5 == 0 || numero2 % 5 == 0){
+            if(numero1 % 5 == 0){
+                numero1 = numero1 / 5;
+            }
+            if(numero2 % 5 == 0){
+                numero2 = numero2 / 5;
+            }
+            mmc*= 5;
+
+        }
+        if(numero1 % 7 == 0 || numero2 % 7 == 0){
+            if(numero1 % 7 == 0){
+                numero1 = numero1 / 7;
+            }
+            if(numero2 % 7 == 0){
+                numero2 = numero2 / 7;
+            }
+            mmc*= 7;
+        }
+    }
+    printf("O mmc entre os dois numeros eh de: %i",mmc);
+
+}
+*/
+
+// Questão 22 -
+/*
+#include "stdio.h"
+void main(){
+    int numero1, numero2;
+    printf("Digite um numero: ");
+    scanf("%i", &numero1);
+    printf("Digite um numero: ");
+    scanf("%i", &numero2);
+    int numero1_real = numero1;
+    int numero2_real = numero2;
+    int divisor = 2;
+    int mdc = 1;
+    while(numero1 > 1 || numero2 > 1){
+        if(numero1 % divisor == 0 || numero2 % divisor == 0){
+            if(numero1 % divisor == 0 && numero2 % divisor == 0){
+            mdc = mdc * divisor;
+            }
+            if(numero1 % divisor == 0){
+                numero1 = numero1 / divisor;
+            }
+            if(numero2 % divisor == 0){
+                numero2 = numero2 / divisor;
+            }
+            }
+
+            if(numero1 % divisor != 0 && numero2 % divisor != 0){
+                divisor++;
+        }
+        }
+        
+    printf("O MDC de %i e %i eh : %i",numero1_real, numero2_real, mdc);
+    }
+    */
