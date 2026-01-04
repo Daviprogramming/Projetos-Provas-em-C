@@ -15,9 +15,3 @@ Aqui estão os principais projetos e arquivos desenvolvidos:
 ## ⚙️ Como rodar
 
 Para testar os projetos, você precisa de um compilador C (como o `gcc`).
-
-**Exemplo para rodar o jogo:**
-
-```bash
-gcc Joguinho_Em_C.c -o jogo
-./jogo
